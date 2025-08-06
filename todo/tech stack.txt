@@ -1,0 +1,9 @@
+| Layer         | Tool                                                     |
+| ------------- | -------------------------------------------------------- |
+| UI            | Streamlit or React                                       |
+| API Server    | FastAPI                                                  |
+| Embeddings    | HuggingFace Transformers (`bge`, `instructor-xl`, etc.)  |
+| Vector Store  | FAISS                                                    |
+| LLM Inference | `gpt-oss-20b` via Transformers (or vLLM for performance) |
+| Model Host    | Local (GPU) or CPU-optimized                             |
+| Chunking      | LangChain or custom splitter                             |

@@ -1,0 +1,24 @@
+privategpt2/
+│
+├── backend/
+│   ├── main.py               # FastAPI backend
+│   ├── rag.py                # RAG pipeline logic
+│   ├── model.py              # Load gpt-oss-20b model
+│   ├── embedder.py           # Embedding logic (e.g., instructor-xl or bge)
+│   └── utils.py              # PDF loader, text splitter, etc.
+│
+├── vector_store/
+│   └── faiss_index/          # Local FAISS DB
+│
+├── data/
+│   └── sample_docs/          # Upload your own docs here
+│
+├── client/
+│   ├── App.jsx               # React or Streamlit frontend
+│   └── components/           # File upload, chat UI, etc.
+│
+├── models/
+│   └── gpt-oss-20b/          # Local downloaded model weights
+│
+├── requirements.txt
+└── README.md

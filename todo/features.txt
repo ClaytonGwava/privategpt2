@@ -1,0 +1,10 @@
+Key Features
+📥 Upload PDFs/TXT files
+
+📚 Chunk and embed documents
+
+🔍 Retrieve top-k relevant chunks
+
+🧠 Run gpt-oss-20b locally (no internet needed)
+
+💬 Chat interface with context-aware responses

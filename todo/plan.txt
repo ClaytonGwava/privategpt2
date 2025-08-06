@@ -1,0 +1,33 @@
+Day 1 – Setup + Base App
+ Install gpt-oss-20b or gpt-oss-20b-instruct from HuggingFace
+
+ Create basic FastAPI backend
+
+ Create Streamlit or React UI with upload + chat
+
+ Load PDFs, split into chunks (LangChain or custom)
+
+🕑 Day 2 – Embeddings + FAISS
+ Add embedding model (e.g., BAAI/bge-base-en-v1.5)
+
+ Embed chunks + build FAISS index
+
+ Add retrieval code: query → embed → retrieve top-k
+
+🕒 Day 3 – LLM Integration
+ Load gpt-oss-20b model using transformers or vllm
+
+ Feed prompt with retrieved context
+
+ Return generated answer to frontend
+
+🕓 Day 4 – Polish + Share
+ Improve UI: loading spinners, formatting
+
+ Add demo documents
+
+ Write blog post + README
+
+ Record 3-min demo video
+
+ Deploy locally or on LAN (optional)

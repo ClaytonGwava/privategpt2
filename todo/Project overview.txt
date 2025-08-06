@@ -1,0 +1,12 @@
+Project Overview: PrivateGPT 2.0 – Local, Private, RAG Chatbot
+🎯 Goal: Build a fully private document Q&A assistant using gpt-oss-20b, FAISS vector store, and local inference. The app will:
+
+Run offline (or locally on-device/server)
+
+Accept documents (PDFs, TXT, etc.)
+
+Generate embeddings + retrieve relevant chunks
+
+Respond using the local LLM
+
+Have a clean web UI
