@@ -1,44 +1,74 @@
-# 💼 PrivateGPT 2.0 – Local Fintech RAG Chatbot
+# 💼 PrivateGPT 2.0 – Local RAG Chatbot for Fintech Risk & Compliance
 
-A fully offline, domain-specific Retrieval-Augmented Generation (RAG) chatbot for the **fintech** sector, powered by the open-source [`gpt-oss-20b`](https://huggingface.co/openai/gpt-oss-20b) language model.
+A fully private, offline-capable Retrieval-Augmented Generation (RAG) chatbot designed for **fintech teams**—particularly in **compliance**, **credit risk**, and **internal audit**—who need instant, secure access to internal knowledge.
 
-🔐 **Private** — No internet or cloud dependency  
-📚 **Domain-Specific** — Trained with your fintech PDFs, CSVs, and docs  
-⚡ **Fast** — Uses local vector DB + efficient embedding  
-🧠 **Smart** — Built with LangChain and Transformers
+🔐 **Privacy-First** — Runs locally with no cloud or internet  
+📚 **Fintech-Specific** — Tailored to regulatory docs, risk models, audit reports  
+⚡ **Fast & Smart** — Built with FAISS, LangChain, and the open-source `gpt-oss-20b`
+
+---
+
+## 🎯 Why This Project?
+
+In fintech, internal teams often struggle to locate critical information buried in compliance manuals, credit policy documents, or historical audit trails—especially under time pressure or regulatory deadlines. This chatbot solves that by enabling:
+
+- 🔍 Instant, natural-language Q&A on internal documentation  
+- 💾 100% offline use — no sensitive data leaves your environment  
+- 🛡️ Enhanced productivity and regulatory preparedness
 
 ---
 
 ## 🚀 Features
 
-- 🔒 100% local & private (no external API calls)
-- 🧾 Supports PDF, CSV, Notion exports
-- 🧠 Uses `gpt-oss-20b` for powerful generation
-- 📎 LangChain-based RAG pipeline
-- 🔎 FAISS for fast semantic search
-- 🎙️ (Optional) Add Whisper for voice input and TTS
+- ✅ 100% offline and private (no external API or cloud access)
+- 📂 Uploads PDF, CSV, Notion docs, and more
+- 🤖 Uses `gpt-oss-20b` for high-quality, contextual responses
+- 🔎 Fast document search with FAISS vector index
+- 🧠 RAG pipeline powered by LangChain
+- 🎙️ (Optional) Add Whisper for speech-to-text queries and TTS responses
 
 ---
 
 ## 📁 Project Structure
 
 ```text
-privategpt2/
+privategpt/
 │
-├── backend/ # FastAPI or LangChain server
-│ ├── main.py
-│ └── rag_pipeline.py
+├── app/                      # FastAPI backend
+│   └── main.py
 │
-├── data/ # Your local documents (PDF, CSV, etc.)
+├── ingest/                   # Ingestion & embedding
+│   ├── loader.py
+│   ├── splitter.py
+│   ├── embedder.py
+│   └── utils.py
 │
-├── models/ # gpt-oss-20b and embeddings
-│ └── gpt-oss-20b/
+├── rag/                      # RAG components
+│   ├── retriever.py
+│   ├── generator.py
+│   └── prompts.py
 │
-├── embeddings/ # FAISS index and chunked data
+├── data/
+│   └── raw/                  # Uploaded fintech documents
 │
-├── utils/ # Text splitting, cleaning, etc.
+├── vectorstore/             # FAISS or Chroma DB
 │
-├── requirements.txt
+├── config/
+│   └── config.py
+│
+├── frontend/                 # React app lives here
+│   ├── public/
+│   └── src/
+│       ├── components/
+│       ├── pages/
+│       ├── App.tsx
+│       └── index.tsx
+│
+├── tests/
+│
+├── .env
+├── requirements.txt          # Python backend dependencies
+├── package.json              # React frontend dependencies
 └── README.md
 ```
 
@@ -65,10 +95,41 @@ venv\Scripts\activate  # Windows
 ```bash
 pip install -r requirements.txt
 ```
-### 4. Download and Setup the Model
+
+```markdown
+### 4. Setup the Model with Ollama
+
+Make sure Ollama is installed on your system: https://ollama.com/docs/installation
+
+Pull the GPT-OSS 20B model from Ollama:
 
 ```bash
-cd models
-git clone https://huggingface.co/openai/gpt-oss-20b
-cd ..
-```
+ollama pull gpt-oss:20b
+
+### 🧪 Example Use Cases
+- 🔎 "What are the key criteria in our Tier 1 credit risk model?"
+
+- 📋 "Summarize the audit findings from Q2 2024."
+
+- 📘 "Explain KYC compliance steps from our 2023 handbook."
+
+- 👩‍💻 "Who approved the exception in our March 2024 credit memo?"
+
+### 🔒 No Cloud. No Tracking. Just Intelligence.
+This project is ideal for compliance-sensitive environments where privacy, speed, and relevance matter most.
+
+### 📌 Coming Soon
+-  GUI interface for uploading documents
+
+-  User feedback loop for QA improvement
+
+-  Voice-based chat with Whisper integration
+
+### 🧠 Built With
+- LangChain
+
+- FAISS
+
+- Transformers
+
+- gpt-oss-20b

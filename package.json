@@ -1,0 +1,22 @@
+{
+  "name": "privategpt2",
+  "version": "1.0.0",
+  "description": "A fully private, offline-capable Retrieval-Augmented Generation (RAG) chatbot designed for **fintech teams**—particularly in **compliance**, **credit risk**, and **internal audit**—who need instant, secure access to internal knowledge.",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ClaytonGwava/privategpt2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ClaytonGwava/privategpt2/issues"
+  },
+  "homepage": "https://github.com/ClaytonGwava/privategpt2#readme"
+}
